@@ -12,38 +12,35 @@ namespace plan_your_heist
             int skillLevel;
             decimal courageFactor;
 
-            // heistTeam will store new heist members that are created by user
-            List<HeistMember> heistTeam = new List<HeistMember>(){};
             Console.WriteLine("Plan Your Heist!");
-            
-            // Heist Member variables will be set to the input from the user
-            Console.WriteLine("Enter a teammember's name: ");
-            name = Console.ReadLine();
-            Console.WriteLine("Enter their skill level (positive whole number): ");
-            int.TryParse(Console.ReadLine(), out skillLevel);
-            Console.WriteLine("Enter their courage factor (decimal between 0.0 and 2.0): ");
-            decimal.TryParse(Console.ReadLine(), out courageFactor);
 
-            // Instantiating a new HeistMember "hm" by way of its constructor
-            HeistMember hm = new HeistMember(name, skillLevel, courageFactor);
+            // Create new Team() outside while loop so there is only a single team obj in memory 
+            Team team = new Team();
 
-            // User input is displayed for the new HeistMember "hm" (name, skill level, and courage factor)
-            Console.WriteLine("----------");
-            Console.WriteLine($"{hm.Name} \n-Skill Level: {hm.SkillLevel} \n-Courage Factor: {hm.CourageFactor}");
+            while (true)
+            {
+
+                // Heist Member variables will be set to the input from the user
+                Console.WriteLine("Enter a teammember's name: ");
+                name = Console.ReadLine();
+                // If name is an empty string, break and terminate while loop
+                if(String.IsNullOrWhiteSpace(name))
+                {
+                    break;
+                }
+                Console.WriteLine("Enter their skill level (positive whole number): ");
+                int.TryParse(Console.ReadLine(), out skillLevel);
+                Console.WriteLine("Enter their courage factor (decimal between 0.0 and 2.0): ");
+                decimal.TryParse(Console.ReadLine(), out courageFactor);
+
+                //Add each new heist member the user creates, then display the size of team and each team members info 
+                team.AddMember(new HeistMember(name, skillLevel, courageFactor));
+                team.DisplayNumberOfMembers();
+                team.DisplayHeistTeamInformation();
+
+            }
 
         }
     }
 
-    class HeistMember {
-        public string Name {get; set;}
-        public int SkillLevel {get; set;}
-        public decimal CourageFactor {get; set;}
-
-        public HeistMember(string name, int skillLevel, decimal courageFactor)
-        {
-            this.Name = name;
-            this.SkillLevel = skillLevel;
-            this.CourageFactor = courageFactor;
-        }
-    }
 }
