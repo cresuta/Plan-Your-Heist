@@ -17,7 +17,7 @@ namespace plan_your_heist
             Console.WriteLine("Enter a teammember's name: ");
             name = Console.ReadLine();
             Console.WriteLine("Enter their skill level (positive whole number): ");
-            skillLevel = int.Parse(Console.ReadLine());
+            int.TryParse(Console.ReadLine(), out skillLevel);
             Console.WriteLine("Enter their courage factor (decimal between 0.0 and 2.0): ");
             decimal.TryParse(Console.ReadLine(), out courageFactor);
 
