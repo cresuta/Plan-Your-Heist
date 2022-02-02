@@ -1,0 +1,16 @@
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/bin/Debug/net5.0/plan-your-heist
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/bin/Debug/net5.0/plan-your-heist.deps.json
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/bin/Debug/net5.0/plan-your-heist.runtimeconfig.json
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/bin/Debug/net5.0/plan-your-heist.runtimeconfig.dev.json
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/bin/Debug/net5.0/plan-your-heist.dll
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/bin/Debug/net5.0/ref/plan-your-heist.dll
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/bin/Debug/net5.0/plan-your-heist.pdb
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/obj/Debug/net5.0/plan-your-heist.csproj.AssemblyReference.cache
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/obj/Debug/net5.0/plan-your-heist.GeneratedMSBuildEditorConfig.editorconfig
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/obj/Debug/net5.0/plan-your-heist.AssemblyInfoInputs.cache
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/obj/Debug/net5.0/plan-your-heist.AssemblyInfo.cs
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/obj/Debug/net5.0/plan-your-heist.csproj.CoreCompileInputs.cache
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/obj/Debug/net5.0/plan-your-heist.dll
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/obj/Debug/net5.0/ref/plan-your-heist.dll
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/obj/Debug/net5.0/plan-your-heist.pdb
+/Users/cresuta/workspace/Backend/book-1/plan-your-heist/obj/Debug/net5.0/plan-your-heist.genruntimeconfig.cache

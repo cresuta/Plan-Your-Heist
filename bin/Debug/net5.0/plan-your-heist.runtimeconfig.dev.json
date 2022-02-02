@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/cresuta/.dotnet/store/|arch|/|tfm|",
+      "/Users/cresuta/.nuget/packages"
+    ]
+  }
+}
