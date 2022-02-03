@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class Team
     {
@@ -8,6 +9,11 @@ class Team
         public void AddMember(HeistMember member)
         {
             heistTeam.Add(member);
+        }
+
+        public int TeamSkillLevel()
+        {
+            return heistTeam.Sum(member => member.SkillLevel);
         }
 
         public void DisplayNumberOfMembers()
@@ -23,4 +29,5 @@ class Team
                 Console.WriteLine($"\nName: {member.Name} \n Skill Level: {member.SkillLevel} \n Courage Factor: {member.CourageFactor}");
             });
         }
+
     }

@@ -14,8 +14,9 @@ namespace plan_your_heist
 
             Console.WriteLine("Plan Your Heist!");
 
-            // Create new Team() outside while loop so there is only a single team obj in memory 
             Team team = new Team();
+            Bank bank = new Bank();
+
 
             while (true)
             {
@@ -24,7 +25,7 @@ namespace plan_your_heist
                 Console.WriteLine("Enter a teammember's name: ");
                 name = Console.ReadLine();
                 // If name is an empty string, break and terminate while loop
-                if(String.IsNullOrWhiteSpace(name))
+                if (String.IsNullOrWhiteSpace(name))
                 {
                     break;
                 }
@@ -33,10 +34,21 @@ namespace plan_your_heist
                 Console.WriteLine("Enter their courage factor (decimal between 0.0 and 2.0): ");
                 decimal.TryParse(Console.ReadLine(), out courageFactor);
 
-                //Add each new heist member the user creates, then display the size of team and each team members info 
+                //Add each new heist member the user creates, then display the size of team
                 team.AddMember(new HeistMember(name, skillLevel, courageFactor));
-                team.DisplayNumberOfMembers();
-                team.DisplayHeistTeamInformation();
+
+
+                if (team.TeamSkillLevel() >= bank.DifficultyLevel)
+                {
+                    team.DisplayNumberOfMembers();
+                    Console.WriteLine($"Skill Level Total: {team.TeamSkillLevel()}");
+                    Console.WriteLine("SUCCESS! You may attempt your heist.");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("FAILURE! Please add another teammember and retry.");
+                }
 
             }
 
