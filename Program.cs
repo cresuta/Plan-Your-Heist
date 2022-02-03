@@ -16,6 +16,7 @@ namespace plan_your_heist
 
             Team team = new Team();
             Bank bank = new Bank();
+            int bankDifficultyLevel = bank.DifficultyLevel + bank.LuckValue();
 
 
             while (true)
@@ -37,21 +38,21 @@ namespace plan_your_heist
                 //Add each new heist member the user creates, then display the size of team
                 team.AddMember(new HeistMember(name, skillLevel, courageFactor));
 
-
-                if (team.TeamSkillLevel() >= bank.DifficultyLevel)
+                if (team.TeamSkillLevel() >= bankDifficultyLevel)
                 {
-                    team.DisplayNumberOfMembers();
-                    Console.WriteLine($"Skill Level Total: {team.TeamSkillLevel()}");
+                    Console.WriteLine($"Heist Team Skill Level Total: {team.TeamSkillLevel()}");
+                    Console.WriteLine($"Bank Difficulty Level: {bankDifficultyLevel}");
                     Console.WriteLine("SUCCESS! You may attempt your heist.");
                     break;
                 }
                 else
                 {
+                    Console.WriteLine($"\nHeist Team Skill Level Total: {team.TeamSkillLevel()}");
+                    Console.WriteLine($"Bank Difficulty Level: {bankDifficultyLevel}");
                     Console.WriteLine("FAILURE! Please add another teammember and retry.");
                 }
 
             }
-
         }
     }
 
