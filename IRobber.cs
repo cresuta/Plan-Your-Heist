@@ -14,4 +14,9 @@ interface IRobber
         return this.GetType().ToString();
     }
 
+    public void AddCrewMember(int index)
+    {
+        
+    }
+
 }

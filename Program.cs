@@ -19,17 +19,9 @@ namespace plan_your_heist
                 new LockSpecialist("Lisa",45, 25)
             };
 
-            Console.WriteLine("\nRolodex Report");
-            Console.WriteLine("----------------");
-            rolodex.ForEach(robber =>
-            {
-                Console.WriteLine($@"
-                {(rolodex.IndexOf(robber))} - {robber.Name}
-                Specialty: {robber.Specialty()}
-                Skill Level: {robber.SkillLevel}
-                Paycut: {robber.PercentageCut}%
-                ");
-            });
+            List<IRobber> crew = new List<IRobber>() { };
+
+
 
 
 
@@ -47,10 +39,30 @@ namespace plan_your_heist
             Console.WriteLine("----------------");
 
             // Print out the number of current operatives in the rolodex
-            Console.WriteLine($"1) Number of current operatives in the rolodex: {rolodex.Count}");
+            Console.WriteLine($"Number of current operatives in the rolodex: {rolodex.Count}");
 
             while (true)
             {
+                Console.WriteLine("\nRolodex Report");
+                Console.WriteLine("----------------");
+                rolodex.ForEach(robber =>
+                {
+                    Console.WriteLine($@"
+                {(rolodex.IndexOf(robber))} - {robber.Name}
+                Specialty: {robber.Specialty()}
+                Skill Level: {robber.SkillLevel}
+                Paycut: {robber.PercentageCut}%
+                ");
+                });
+
+                // Ask user to select crew member by index 
+                Console.WriteLine($"Select a crew member to add to the heist (1-{rolodex.Count})");
+                int index;
+                int.TryParse(Console.ReadLine(), out index);
+                // Add robber from rolodex and add them to the crew
+                crew.Add(rolodex[index]);
+                
+
                 // Ask user to enter 
                 Console.WriteLine("Enter the name of a new crew member: ");
                 string name = Console.ReadLine();
