@@ -4,8 +4,14 @@ interface IRobber
     public int SkillLevel {get;set;}
     public int PercentageCut {get;set;}
 
-    public virtual void PerformSkill(Bank bank)
+    public virtual void PerformSkill()
     {
-
+        
     }
+
+    public virtual string Specialty()
+    {
+        return this.GetType().ToString();
+    }
+
 }

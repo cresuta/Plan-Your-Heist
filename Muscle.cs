@@ -6,6 +6,11 @@ class Muscle : IRobber
     public int SkillLevel { get; set; }
     public int PercentageCut { get; set; }
 
+    public string Specialty()
+    {
+        return this.GetType().ToString();
+    }
+
     public Muscle(string name, int skillLevel, int percentageCut)
     {
         Name = name;

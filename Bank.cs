@@ -9,6 +9,7 @@ class Bank
     public int AlarmScore { get; set; }
     public int VaultScore { get; set; }
     public int SecurityGuardScore { get; set; }
+
     public bool IsSecure(int difficultyLevel, int cashOnHand, int alarmScore, int vaultScore, int securityGuardScore)
     {
         List<int> bankInfo = new List<int>()
@@ -37,7 +38,7 @@ class Bank
 
     public void ReconReport()
     {
-        Dictionary<string,int> bankScores = new Dictionary<string, int>()
+        Dictionary<string, int> bankScores = new Dictionary<string, int>()
         {
             {"Alarm", this.AlarmScore},
             {"Vault", this.VaultScore},
@@ -47,12 +48,13 @@ class Bank
         string mostSecure = "";
         string leastSecure = "";
 
-        foreach(var pair in bankScores)
+        foreach (var pair in bankScores)
         {
-            if(pair.Value.Equals(bankScores.Values.Max()))
+            if (pair.Value.Equals(bankScores.Values.Max()))
             {
                 mostSecure = pair.Key;
-            } else if(pair.Value.Equals(bankScores.Values.Min()))
+            }
+            else if (pair.Value.Equals(bankScores.Values.Min()))
             {
                 leastSecure = pair.Key;
             }

@@ -19,6 +19,18 @@ namespace plan_your_heist
                 new LockSpecialist("Lisa",45, 25)
             };
 
+            Console.WriteLine("\nRolodex Report");
+            Console.WriteLine("----------------");
+            rolodex.ForEach(robber =>
+            {
+                Console.WriteLine($@"
+                {(rolodex.IndexOf(robber))} - {robber.Name}
+                Specialty: {robber.Specialty()}
+                Skill Level: {robber.SkillLevel}
+                Paycut: {robber.PercentageCut}%
+                ");
+            });
+
 
 
             // decimal courageFactor;
@@ -81,10 +93,10 @@ namespace plan_your_heist
                 else
                 {
                     Bank bank = new Bank();
-                    bank.AlarmScore = new Random().Next(0,100);
-                    bank.VaultScore = new Random().Next(0,100);
-                    bank.SecurityGuardScore = new Random().Next(0,100);
-                    bank.CashOnHand = new Random().Next(50_000,1_000_000);
+                    bank.AlarmScore = new Random().Next(0, 100);
+                    bank.VaultScore = new Random().Next(0, 100);
+                    bank.SecurityGuardScore = new Random().Next(0, 100);
+                    bank.CashOnHand = new Random().Next(50_000, 1_000_000);
                     // printing Recon Report
                     bank.ReconReport();
 

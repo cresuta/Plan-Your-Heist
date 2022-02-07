@@ -6,6 +6,11 @@ class Hacker : IRobber
     public int SkillLevel { get; set; }
     public int PercentageCut { get; set; }
 
+    public string Specialty()
+    {
+        return this.GetType().ToString();
+    }
+
     public Hacker(string name, int skillLevel, int percentageCut)
     {
         Name = name;

@@ -6,6 +6,11 @@ class LockSpecialist : IRobber
     public int SkillLevel { get; set; }
     public int PercentageCut { get; set; }
 
+    public string Specialty()
+    {
+        return this.GetType().ToString();
+    }
+
     public LockSpecialist(string name, int skillLevel, int percentageCut)
     {
         Name = name;
